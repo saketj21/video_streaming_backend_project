@@ -14,6 +14,9 @@
   "author": "Saket Jain",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.2"
+  },
+  "dependencies": {
+    "prettier": "^3.1.1"
   }
 }
