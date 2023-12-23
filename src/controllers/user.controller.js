@@ -1,5 +1,5 @@
 import {asyncHandler} from '../utils/asyncHandler.js';
-import {User} from '../models/user.model.js';
+import {User} from '../models/user.models.js';
 import {uploadCloudinary} from '../utils/fileUpload.js';
 import { apiResponse } from '../utils/apiResponse.js';   
 
@@ -10,7 +10,7 @@ const registerUser=asyncHandler(async(req,res)=>{
        res.status(400);
        throw new Error("All fields are required");
    }
-   const existedUser=User.findOne({
+   const existedUser=await User.findOne({
       $or:[{username},{email}]
    })
    if(existedUser){
